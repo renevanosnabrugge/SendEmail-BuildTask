@@ -1,0 +1,131 @@
+{
+  "id": "a41d805b-80c4-4b20-924d-b8d1cca9a43f",
+  "name": "SendEmail",
+  "friendlyName": "Send email",
+  "description": "Send an email to 1 or more addresses via the SMTP server you provide",
+  "helpMarkDown": "[More information](http://gitub.com/rvanosnabrugge)",
+  "category": "Utility",
+  "author": "R. van Osnabrugge",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 1
+  },
+    "demands":  [],
+  "minimumAgentVersion": "1.83.0",
+	"groups": [
+    {
+      "name": "smtpsettings",
+      "displayName": "SMTP Settings",
+      "isExpanded": true
+    },
+    {
+      "name": "mailsettings",
+      "displayName": "Email settings",
+      "isExpanded": true
+    }
+  ],
+   "inputs": [
+    {
+      "name": "To",
+      "type": "string",
+      "label": "To Addresses",
+      "defaultValue": "",
+      "required": true,
+      "groupName": "mailsettings",
+      "helpMarkDown": "To Addresses. Separate by semicolon (;)"
+    },
+    {
+      "name": "From",
+      "type": "string",
+      "label": "From Address",
+      "defaultValue": "",
+      "required": true,
+      "groupName": "mailsettings",
+      "helpMarkDown": "From Address"
+    },
+    {
+      "name": "Subject",
+      "type": "string",
+      "label": "Mail Subject",
+      "defaultValue": "",
+      "required": true,
+      "groupName": "mailsettings",
+      "helpMarkDown": "The subject of the email"
+
+    },
+    {
+      "name": "Body",
+      "type": "multiLine",
+      "label": "Mail Body",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "mailsettings",
+      "helpMarkDown": "The body of the email"
+
+    },
+    {
+      "name": "BodyAsHtml",
+      "type": "boolean",
+      "label": "Is HTML Body?:",
+      "defaultValue": "false",
+      "required": true,
+      "groupName": "mailsettings",
+      "helpMarkDown": "Indicate if the text in the Body is HTML formatted"
+    },
+    {
+      "name": "SmtpServer",
+      "type": "string",
+      "label": "SMTP Server",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "smtpsettings",
+      "helpMarkDown": "Name or IP Address of a SMTP server"
+    },
+    {
+      "name": "SmtpPort",
+      "type": "string",
+      "label": "SMTP Server",
+      "defaultValue": "587",
+      "required": false,
+      "groupName": "smtpsettings",
+      "helpMarkDown": "Port to the SMTP server"
+    },	
+    {
+      "name": "SmtpUsername",
+      "type": "string",
+      "label": "SMTP Username",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "smtpsettings",
+      "helpMarkDown": "Username for the SMTP server"
+    },
+    {
+      "name": "SmtpPassword",
+      "type": "string",
+      "label": "SMTP Password",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "smtpsettings",
+      "helpMarkDown": "Password for the SMTP server"
+    },
+	{
+      "name": "UseSSL",
+      "type": "boolean",
+      "label": "SMTP Use SSL?",
+      "defaultValue": "true",
+      "required": false,
+      "groupName": "smtpsettings",
+      "helpMarkDown": "Indication whether to use SSL for connecting to the SMTP server"
+    }
+
+  ],
+  "instanceNameFormat": "Send an email with subject $(Subject)",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\SendMail.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
