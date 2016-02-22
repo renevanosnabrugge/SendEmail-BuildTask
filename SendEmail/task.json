@@ -9,21 +9,22 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 1
+    "Patch": 2
   },
     "demands":  [],
   "minimumAgentVersion": "1.83.0",
 	"groups": [
+        {
+      "name": "mailsettings",
+      "displayName": "Email settings",
+      "isExpanded": true
+    },
     {
       "name": "smtpsettings",
       "displayName": "SMTP Settings",
       "isExpanded": true
-    },
-    {
-      "name": "mailsettings",
-      "displayName": "Email settings",
-      "isExpanded": true
     }
+
   ],
    "inputs": [
     {

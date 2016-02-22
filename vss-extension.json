@@ -1,0 +1,69 @@
+{
+    "manifestVersion": 1,
+    "id": "SendEmailTask",
+    "name": "Send Email",
+    "version": "1.0.1",
+    "publisher": "rvo",
+    "public":true,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Send Email Build and Release Task",
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "email",
+        "message"
+    ],
+    "screenshots": [
+        {
+            "path": "images/Screen1.png"
+        }
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": "license.md"
+        }
+    },
+    "files": [
+        {
+            "path": "SendEmail"
+        }
+    ],
+    "links": {
+        "blog": {
+            "uri": "http://roadtoalm.com"
+        },
+        "source": {
+            "uri": "https://github.com/renevanosnabrugge/SendEmail-BuildTask"
+        },
+        "company": {
+            "uri": "https://www.xpirit.com"
+        }
+    },
+    "branding": {
+        "color": "rgb(36, 43, 50)",
+        "theme": "dark"
+    },
+    "contributions": [
+        {
+            "id": "send-email-build-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "SendEmail"
+            }
+        }
+    ]
+}
