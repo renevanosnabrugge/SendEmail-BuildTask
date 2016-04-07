@@ -75,6 +75,25 @@
       "helpMarkDown": "Indicate if the text in the Body is HTML formatted"
     },
     {
+      "name": "AddAttachment",
+      "type": "boolean",
+      "label": "Add Attachment?:",
+      "defaultValue": "false",
+      "required": true,
+      "groupName": "mailsettings",
+      "helpMarkDown": "Indicate if a file will be attached to the email"
+    },
+    {
+      "name": "Attachment",
+      "type": "string",
+      "label": "Attachment (absolute path)",
+      "defaultValue": "",
+      "required": true,
+      "groupName": "mailsettings",
+      "helpMarkDown": "The absolute path to the file"
+
+    },
+    {
       "name": "SmtpServer",
       "type": "string",
       "label": "SMTP Server",
