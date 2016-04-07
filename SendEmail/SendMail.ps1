@@ -21,7 +21,11 @@ param(
 [Parameter(Mandatory=$False)]
 [string] $SmtpPassword,
 [Parameter(Mandatory=$False)]
-[string] $UseSSL = "True"
+[string] $UseSSL = "True",
+[Parameter(Mandatory=$False)]
+[string] $AddAttachment = "True",
+[Parameter(Mandatory=$False)]
+[string] $Attachment
 )
 
 $MailParams = @{}
@@ -35,12 +39,15 @@ Write-Output "SMTP Server: $SmtpServer"
 Write-Output "SMTP Username: $SmtpUsername"
 Write-Output "SMTP Port: $SmtpPort"
 Write-Output "Use SSL?: $UseSSL"
+Write-Output "Add Attachment?: $AddAttachment"
+Write-Output "Attachment: $Attachment"
 
 
 [string[]]$toMailAddresses=$To.Split(';');
 
 [bool]$BodyAsHtmlBool = [System.Convert]::ToBoolean($BodyAsHtml)
 [bool]$UseSSLBool =  [System.Convert]::ToBoolean($UseSSL)
+[bool]$AddAttachmentBool =  [System.Convert]::ToBoolean($AddAttachment)
 [int]$SmtpPortInt =  [System.Convert]::ToInt32($SmtpPort,10)
 
 $securePassword = ConvertTo-SecureString $SmtpPassword -AsPlainText -Force
@@ -59,9 +66,16 @@ if($BodyAsHtmlBool)
     $MailParams.Add("BodyAsHtml",$true);
 
 }
+
 if($UseSSLBool)
 {
     $MailParams.Add("UseSSL",$true);
+
+}
+
+if($AddAttachmentBool)
+{
+    $MailParams.Add("Attachments",$Attachment);
 
 }
 
