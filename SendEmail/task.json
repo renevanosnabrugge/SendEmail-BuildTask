@@ -62,7 +62,11 @@
       "defaultValue": "",
       "required": false,
       "groupName": "mailsettings",
-      "helpMarkDown": "The body of the email"
+      "helpMarkDown": "The body of the email",
+      "properties": {
+        "resizable": true,
+        "rows" : "20"
+      }
 
     },
     {
