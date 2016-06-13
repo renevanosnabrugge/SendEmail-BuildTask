@@ -109,7 +109,7 @@
     {
       "name": "SmtpPort",
       "type": "string",
-      "label": "SMTP Server",
+      "label": "SMTP Port",
       "defaultValue": "587",
       "required": false,
       "groupName": "smtpsettings",
