@@ -50,16 +50,19 @@ Write-Output "Attachment: $Attachment"
 [bool]$AddAttachmentBool =  [System.Convert]::ToBoolean($AddAttachment)
 [int]$SmtpPortInt =  [System.Convert]::ToInt32($SmtpPort,10)
 
-$securePassword = ConvertTo-SecureString $SmtpPassword -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential ($SmtpUsername, $securePassword)
-
 $MailParams.Add("To",$toMailAddresses);
 $MailParams.Add("From",$From);
 $MailParams.Add("Subject",$Subject);
 $MailParams.Add("Body",$Body);
 $MailParams.Add("SmtpServer",$SmtpServer);
 $MailParams.Add("Port",$SmtpPort);
-$MailParams.Add("Credential",$credential);
+
+if ([string]::IsNullOrEmpty($SmtpUsername))
+{
+    $securePassword = ConvertTo-SecureString $SmtpPassword -AsPlainText -Force
+    $credential = New-Object System.Management.Automation.PSCredential ($SmtpUsername, $securePassword)
+    $MailParams.Add("Credential",$credential);
+}
 
 if($BodyAsHtmlBool)
 {
