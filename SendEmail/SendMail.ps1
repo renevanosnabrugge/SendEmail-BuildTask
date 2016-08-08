@@ -57,7 +57,7 @@ $MailParams.Add("Body",$Body);
 $MailParams.Add("SmtpServer",$SmtpServer);
 $MailParams.Add("Port",$SmtpPort);
 
-if (![string]::IsNullOrEmpty($SmtpUsername))
+if (!([string]::IsNullOrEmpty($SmtpUsername)))
 {
     $securePassword = ConvertTo-SecureString $SmtpPassword -AsPlainText -Force
     $credential = New-Object System.Management.Automation.PSCredential ($SmtpUsername, $securePassword)
