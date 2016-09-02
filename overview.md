@@ -5,6 +5,9 @@ This extension takes care of sending email within your build or release pipeline
 * Send email to 1 or more addresses
 * Configure a SMTP server 
 
+*2-9-2016*
+Added Anonymous authentication
+
 ##More information
 Source can be found here on [Github](https://github.com/renevanosnabrugge/SendEmail-BuildTask)
 
