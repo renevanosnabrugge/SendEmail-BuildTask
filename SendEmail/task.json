@@ -3,7 +3,7 @@
   "name": "SendEmail",
   "friendlyName": "Send email",
   "description": "Send an email to 1 or more addresses via the SMTP server you provide",
-  "helpMarkDown": "Version: #{Build.BuildNumber}#. [More information](http://gitub.com/rvanosnabrugge)",
+  "helpMarkDown": "Version: __Build.BuildNumber__. [More information](http://gitub.com/rvanosnabrugge)",
   "category": "Utility",
   "author": "R. van Osnabrugge",
   "version": {
