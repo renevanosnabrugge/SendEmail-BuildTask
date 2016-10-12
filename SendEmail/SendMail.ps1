@@ -52,10 +52,16 @@ Write-Output "Attachment: $Attachment"
 
 $MailParams.Add("To",$toMailAddresses);
 $MailParams.Add("From",$From);
-$MailParams.Add("Subject",$Subject);
-$MailParams.Add("Body",$Body);
+
+$Subjectxpanded = $ExecutionContext.InvokeCommand.ExpandString($Subject) 
+$MailParams.Add("Subject",$Subjectxpanded);
+
+$BodyExpanded = $ExecutionContext.InvokeCommand.ExpandString($Body) 
+$MailParams.Add("Body",$BodyExpanded);
+
 $MailParams.Add("SmtpServer",$SmtpServer);
 $MailParams.Add("Port",$SmtpPort);
+$MailParams.Add("Encoding", "UTF8"); 
 
 if (!([string]::IsNullOrEmpty($SmtpUsername)))
 {
