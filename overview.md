@@ -5,6 +5,11 @@ This extension takes care of sending email within your build or release pipeline
 * Send email to 1 or more addresses
 * Configure a SMTP server 
 
+*12-10-2016*
+Fixed a bug that allowed to send "accents" and other special characters. (Thanks Dominic Perreault)
+Fixed a bug that build variables are not expanded in the build body and subject (Thanks David Williams)
+
+
 *2-9-2016*
 Added Anonymous authentication. Leave the username and password field blank to send with anonymous access
 
