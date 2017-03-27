@@ -25,13 +25,19 @@ param(
 [Parameter(Mandatory=$False)]
 [string] $AddAttachment = "True",
 [Parameter(Mandatory=$False)]
-[string] $Attachment
+[string] $Attachment,
+[Parameter(Mandatory=$False)]
+[string] $CC,
+[Parameter(Mandatory=$False)]
+[string] $BCC
 )
 
 $MailParams = @{}
 
 Write-Output "Input Vars"
 Write-Output "Send Email To: $To"
+Write-Output "Send Email CC: $CC"
+Write-Output "Send Email BCC: $BCC"
 Write-Output "Subject: $Subject"
 Write-Output "Send Email From: $From"
 Write-Output "Body as Html?: $BodyAsHtml"
@@ -44,6 +50,8 @@ Write-Output "Attachment: $Attachment"
 
 
 [string[]]$toMailAddresses=$To.Split(';');
+[string[]]$ccMailAddresses=$To.Split(';');
+[string[]]$bccMailAddresses=$To.Split(';');
 
 [bool]$BodyAsHtmlBool = [System.Convert]::ToBoolean($BodyAsHtml)
 [bool]$UseSSLBool =  [System.Convert]::ToBoolean($UseSSL)
@@ -51,6 +59,8 @@ Write-Output "Attachment: $Attachment"
 [int]$SmtpPortInt =  [System.Convert]::ToInt32($SmtpPort,10)
 
 $MailParams.Add("To",$toMailAddresses);
+$MailParams.Add("Cc",$ccMailAddressess);
+$MailParams.Add("Bcc",$bccMailAddressess);
 $MailParams.Add("From",$From);
 
 $Subjectxpanded = $ExecutionContext.InvokeCommand.ExpandString($Subject) 
@@ -90,12 +100,6 @@ if($AddAttachmentBool)
 
 Send-MailMessage @MailParams
 
-if ($UseSSLBool) {
-#    Send-MailMessage -To $toMailAddresses -From $From -Subject $Subject -Body $Body -SmtpServer $SmtpServer -Credential $credential -UseSsl -Port $SmtpPortInt  -Verbose
-}
-else {
- #   Send-MailMessage -To $toMailAddresses -From $From -Subject $Subject -Body $Body -SmtpServer $SmtpServer -Credential $credential -Port $SmtpPortInt   -Verbose
-}
 
 
 

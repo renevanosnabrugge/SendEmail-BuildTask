@@ -37,6 +37,24 @@
       "helpMarkDown": "To Addresses. Separate by semicolon (;)"
     },
     {
+      "name": "CC",
+      "type": "string",
+      "label": "CC Addresses",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "mailsettings",
+      "helpMarkDown": "CC Addresses. Separate by semicolon (;)"
+    },
+    {
+      "name": "BCC",
+      "type": "string",
+      "label": "BCC Addresses",
+      "defaultValue": "",
+      "required": false,
+      "groupName": "mailsettings",
+      "helpMarkDown": "BCC Addresses. Separate by semicolon (;)"
+    },
+    {
       "name": "From",
       "type": "string",
       "label": "From Address",

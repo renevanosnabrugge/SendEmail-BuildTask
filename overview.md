@@ -2,8 +2,11 @@
 This extension takes care of sending email within your build or release pipeline
 
 ##What can you do
-* Send email to 1 or more addresses
+* Send email to 1 or more addresses (To, CC and BCC)
 * Configure a SMTP server 
+
+*27-03-2017*
+Added the possibility to send email to CC and BCC as well
 
 *12-10-2016*
 Fixed a bug that allowed to send "accents" and other special characters. (Thanks Dominic Perreault)
