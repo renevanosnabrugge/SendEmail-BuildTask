@@ -49,6 +49,7 @@ Write-Output "Add Attachment?: $AddAttachment"
 Write-Output "Attachment: $Attachment"
 
 
+
 [string[]]$toMailAddresses=$To.Split(';');
 [string[]]$ccMailAddresses=$CC.Split(';');
 [string[]]$bccMailAddresses=$BCC.Split(';');
@@ -59,8 +60,13 @@ Write-Output "Attachment: $Attachment"
 [int]$SmtpPortInt =  [System.Convert]::ToInt32($SmtpPort,10)
 
 $MailParams.Add("To",$toMailAddresses);
-$MailParams.Add("Cc",$ccMailAddressess);
-$MailParams.Add("Bcc",$bccMailAddressess);
+if ($ccMailAddresses -ne $null) { 
+    $MailParams.Add("Cc",$ccMailAddresses);
+}
+
+if ($bccMailAddresses -ne $null) { 
+    $MailParams.Add("Bcc",$bccMailAddresses);
+}
 $MailParams.Add("From",$From);
 
 $Subjectxpanded = $ExecutionContext.InvokeCommand.ExpandString($Subject) 
@@ -97,6 +103,9 @@ if($AddAttachmentBool)
     $MailParams.Add("Attachments",$Attachment);
 
 }
+
+Write-Output "Send-MailMessage" + @MailParams
+
 
 Send-MailMessage @MailParams
 
