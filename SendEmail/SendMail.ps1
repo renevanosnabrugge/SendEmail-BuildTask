@@ -104,7 +104,6 @@ if($AddAttachmentBool)
 
 }
 
-Write-Output "Send-MailMessage" + @MailParams
 
 
 Send-MailMessage @MailParams
