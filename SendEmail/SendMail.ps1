@@ -50,8 +50,8 @@ Write-Output "Attachment: $Attachment"
 
 
 [string[]]$toMailAddresses=$To.Split(';');
-[string[]]$ccMailAddresses=$To.Split(';');
-[string[]]$bccMailAddresses=$To.Split(';');
+[string[]]$ccMailAddresses=$CC.Split(';');
+[string[]]$bccMailAddresses=$BCC.Split(';');
 
 [bool]$BodyAsHtmlBool = [System.Convert]::ToBoolean($BodyAsHtml)
 [bool]$UseSSLBool =  [System.Convert]::ToBoolean($UseSSL)
