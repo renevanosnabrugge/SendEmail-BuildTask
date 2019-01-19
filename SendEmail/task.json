@@ -128,7 +128,7 @@
       "name": "SmtpPort",
       "type": "string",
       "label": "SMTP Port",
-      "defaultValue": "587",
+      "defaultValue": "25",
       "required": false,
       "groupName": "smtpsettings",
       "helpMarkDown": "Port to the SMTP server"
@@ -155,7 +155,7 @@
       "name": "UseSSL",
       "type": "boolean",
       "label": "SMTP Use SSL?",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "required": false,
       "groupName": "smtpsettings",
       "helpMarkDown": "Indication whether to use SSL for connecting to the SMTP server"
