@@ -15,13 +15,13 @@ param(
 [Parameter(Mandatory=$True)]
 [string] $SmtpServer,
 [Parameter(Mandatory=$False)]
-[string] $SmtpPort ="587",
+[string] $SmtpPort ="25",
 [Parameter(Mandatory=$False)]
 [string] $SmtpUsername,
 [Parameter(Mandatory=$False)]
 [string] $SmtpPassword,
 [Parameter(Mandatory=$False)]
-[string] $UseSSL = "True",
+[string] $UseSSL = "False",
 [Parameter(Mandatory=$False)]
 [string] $AddAttachment = "True",
 [Parameter(Mandatory=$False)]
