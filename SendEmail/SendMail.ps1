@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
 [Parameter(Mandatory=$False)]
 [string] $send = "",
@@ -15,15 +15,13 @@ param(
 [Parameter(Mandatory=$True)]
 [string] $SmtpServer,
 [Parameter(Mandatory=$False)]
-[string] $SmtpPort ="587",
+[string] $SmtpPort ="25",
 [Parameter(Mandatory=$False)]
 [string] $SmtpUsername,
 [Parameter(Mandatory=$False)]
 [string] $SmtpPassword,
 [Parameter(Mandatory=$False)]
-[string] $UseSSL = "True",
-[Parameter(Mandatory=$False)]
-[string] $AddAttachment = "True",
+[string] $UseSSL = "False",
 [Parameter(Mandatory=$False)]
 [string] $Attachment,
 [Parameter(Mandatory=$False)]
@@ -45,7 +43,6 @@ Write-Output "SMTP Server: $SmtpServer"
 Write-Output "SMTP Username: $SmtpUsername"
 Write-Output "SMTP Port: $SmtpPort"
 Write-Output "Use SSL?: $UseSSL"
-Write-Output "Add Attachment?: $AddAttachment"
 Write-Output "Attachment: $Attachment"
 
 
@@ -56,7 +53,6 @@ Write-Output "Attachment: $Attachment"
 
 [bool]$BodyAsHtmlBool = [System.Convert]::ToBoolean($BodyAsHtml)
 [bool]$UseSSLBool =  [System.Convert]::ToBoolean($UseSSL)
-[bool]$AddAttachmentBool =  [System.Convert]::ToBoolean($AddAttachment)
 [int]$SmtpPortInt =  [System.Convert]::ToInt32($SmtpPort,10)
 
 $MailParams.Add("To",$toMailAddresses);
@@ -89,25 +85,20 @@ if (!([string]::IsNullOrEmpty($SmtpUsername)))
 if($BodyAsHtmlBool)
 {
     $MailParams.Add("BodyAsHtml",$true);
-
 }
 
 if($UseSSLBool)
 {
     $MailParams.Add("UseSSL",$true);
-
 }
 
-if($AddAttachmentBool)
+if (!([string]::IsNullOrEmpty($Attachment)))
 {
-    $MailParams.Add("Attachments",$Attachment);
-
+	$MailParams.Add("Attachments",$Attachment);
 }
-
 
 
 Send-MailMessage @MailParams
-
 
 
 

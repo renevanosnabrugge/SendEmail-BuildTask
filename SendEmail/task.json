@@ -97,15 +97,6 @@
       "helpMarkDown": "Indicate if the text in the Body is HTML formatted"
     },
     {
-      "name": "AddAttachment",
-      "type": "boolean",
-      "label": "Add Attachment?:",
-      "defaultValue": "false",
-      "required": true,
-      "groupName": "mailsettings",
-      "helpMarkDown": "Indicate if a file will be attached to the email"
-    },
-    {
       "name": "Attachment",
       "type": "string",
       "label": "Attachment (absolute path)",
@@ -128,7 +119,7 @@
       "name": "SmtpPort",
       "type": "string",
       "label": "SMTP Port",
-      "defaultValue": "587",
+      "defaultValue": "25",
       "required": false,
       "groupName": "smtpsettings",
       "helpMarkDown": "Port to the SMTP server"
@@ -155,7 +146,7 @@
       "name": "UseSSL",
       "type": "boolean",
       "label": "SMTP Use SSL?",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "required": false,
       "groupName": "smtpsettings",
       "helpMarkDown": "Indication whether to use SSL for connecting to the SMTP server"
