@@ -11,7 +11,7 @@
     ],
     "description": "Send Email Build and Release Task",
     "categories": [
-        "Build and release"
+        "Azure Pipelines"
     ],
     "tags": [
         "email",
@@ -28,7 +28,7 @@
       },
     "content": {
         "details": {
-            "path": "readme.md"
+            "path": "README.md"
         },
         "license": {
             "path": "LICENSE"
