@@ -1,36 +1,20 @@
 ﻿[CmdletBinding()]
-param(
-[Parameter(Mandatory=$False)]
-[string] $send = "",
-[Parameter(Mandatory=$True)]
-[string] $To,
-[Parameter(Mandatory=$True)]
-[string] $Subject,
-[Parameter(Mandatory=$True)]
-[string] $Body,
-[Parameter(Mandatory=$True)]
-[string] $From,
-[Parameter(Mandatory=$False)]
-[string] $BodyAsHtml = "True",
-[Parameter(Mandatory=$True)]
-[string] $SmtpServer,
-[Parameter(Mandatory=$False)]
-[string] $SmtpPort ="587",
-[Parameter(Mandatory=$False)]
-[string] $SmtpUsername,
-[Parameter(Mandatory=$False)]
-[string] $SmtpPassword,
-[Parameter(Mandatory=$False)]
-[string] $UseSSL = "True",
-[Parameter(Mandatory=$False)]
-[string] $AddAttachment = "True",
-[Parameter(Mandatory=$False)]
-[string] $Attachment,
-[Parameter(Mandatory=$False)]
-[string] $CC,
-[Parameter(Mandatory=$False)]
-[string] $BCC
-)
+param()
+
+$To = Get-VstsInput -Name 'To' -Require
+$Subject = Get-VstsInput -Name 'Subject' -Require
+$Body = Get-VstsInput -Name 'Body' -Require
+$From = Get-VstsInput -Name 'From' -Require
+$BodyAsHtml = Get-VstsInput -Name 'BodyAsHtml'
+$SmtpServer = Get-VstsInput -Name 'SmtpServer' -Require
+$SmtpPort = Get-VstsInput -Name 'SmtpPort'
+$SmtpUsername = Get-VstsInput -Name 'SmtpUsername'
+$SmtpPassword = Get-VstsInput -Name 'SmtpPassword'
+$UseSSL = Get-VstsInput -Name 'UseSSL'
+$AddAttachment = Get-VstsInput -Name 'AddAttachment'
+$Attachment = Get-VstsInput -Name 'Attachment'
+$CC = Get-VstsInput -Name 'CC'
+$BCC = Get-VstsInput -Name 'BCC'
 
 $MailParams = @{}
 
@@ -57,14 +41,13 @@ Write-Output "Attachment: $Attachment"
 [bool]$BodyAsHtmlBool = [System.Convert]::ToBoolean($BodyAsHtml)
 [bool]$UseSSLBool =  [System.Convert]::ToBoolean($UseSSL)
 [bool]$AddAttachmentBool =  [System.Convert]::ToBoolean($AddAttachment)
-[int]$SmtpPortInt =  [System.Convert]::ToInt32($SmtpPort,10)
 
 $MailParams.Add("To",$toMailAddresses);
-if ($ccMailAddresses -ne $null) { 
+if ($null -ne $ccMailAddresses) { 
     $MailParams.Add("Cc",$ccMailAddresses);
 }
 
-if ($bccMailAddresses -ne $null) { 
+if ($null -ne $bccMailAddresses) { 
     $MailParams.Add("Bcc",$bccMailAddresses);
 }
 $MailParams.Add("From",$From);
