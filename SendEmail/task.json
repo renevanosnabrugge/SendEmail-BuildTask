@@ -1,17 +1,18 @@
 {
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
   "id": "a41d805b-80c4-4b20-924d-b8d1cca9a43f",
   "name": "SendEmail",
-  "friendlyName": "Send email",
+  "friendlyName": "#{PrivatePublicExtension}#Send email",
   "description": "Send an email to 1 or more addresses via the SMTP server you provide",
-  "helpMarkDown": "Version: __VERSION__. [More information](http://github.com/rvanosnabrugge)",
+  "helpMarkDown": "Version: #{PrivatePublicExtension}##{Build.BuildNumber}#. [More information](http://github.com/rvanosnabrugge)",
   "category": "Utility",
-  "author": "R. van Osnabrugge",
+  "author": "Rene van Osnabrugge",
   "version": {
-    "Major": 1,
+    "Major": 0,
     "Minor": 0,
-    "Patch": 2
+    "Patch": 0
   },
-    "demands":  [],
+  "demands":  [],
   "minimumAgentVersion": "1.83.0",
 	"groups": [
         {
@@ -164,7 +165,7 @@
   ],
   "instanceNameFormat": "Send an email with subject $(Subject)",
   "execution": {
-    "PowerShell": {
+    "PowerShell3": {
       "target": "$(currentDirectory)\\SendMail.ps1",
       "argumentFormat": "",
       "workingDirectory": "$(currentDirectory)"
