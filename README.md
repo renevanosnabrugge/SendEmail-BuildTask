@@ -5,6 +5,9 @@ This extension takes care of sending email within your build or release pipeline
 * Send email to 1 or more addresses (To, CC and BCC)
 * Configure a SMTP server 
 
+*23-12-2020*
+Updated the deprecated SDK and changed some inner workings. Many thanks to [FlorisdeVreese](https://github.com/FlorisDevreese) for this pull request
+
 *27-03-2017*
 Added the possibility to send email to CC and BCC as well
 
