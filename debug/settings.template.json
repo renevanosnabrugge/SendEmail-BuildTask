@@ -1,0 +1,16 @@
+{
+    "To":"",
+    "Subject":"Test From local run",
+    "Body":"Test from local run",
+    "From":"",
+    "BodyAsHtml":"false",
+    "SmtpServer":"",
+    "SmtpPort":"",
+    "SmtpUsername":"",
+    "SmtpPassword":"",
+    "UseSSL":"true",
+    "AddAttachment":"false",
+    "Attachment":"",
+    "CC":"",
+    "BCC":""
+}

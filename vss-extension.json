@@ -2,9 +2,8 @@
     "manifestVersion": 1,
     "id": "SendEmailTask",
     "name": "Send Email",
-    "version": "1.0.1",
+    "version": "0.0.0",
     "publisher": "rvo",
-    "public":true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -12,7 +11,7 @@
     ],
     "description": "Send Email Build and Release Task",
     "categories": [
-        "Build and release"
+        "Azure Pipelines"
     ],
     "tags": [
         "email",
@@ -20,18 +19,19 @@
     ],
     "screenshots": [
         {
-            "path": "images/Screen1.png"
+            "path": "extension/images/Screenshots/Screen1.png"
         }
     ],
     "icons": {
-        "default": "images/extension-icon.png"
-    },
+        "default": "extension/images/extension-icon-small.png",
+        "large": "extension/images/extension-icon.png"
+      },
     "content": {
         "details": {
-            "path": "overview.md"
+            "path": "README.md"
         },
         "license": {
-            "path": "license.md"
+            "path": "LICENSE"
         }
     },
     "files": [
@@ -48,12 +48,22 @@
         },
         "company": {
             "uri": "https://www.xpirit.com"
-        }
+        },
+        "support": {
+            "uri": "https://github.com/renevanosnabrugge/SendEmail-BuildTask/issues"
+          },
+          "issues": {
+            "uri": "https://github.com/renevanosnabrugge/SendEmail-BuildTask/issues"
+          }        
     },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/renevanosnabrugge/SendEmail-BuildTask"
+      },    
     "branding": {
-        "color": "rgb(36, 43, 50)",
+        "color": "rgb(34, 34, 72)",
         "theme": "dark"
-    },
+      },
     "contributions": [
         {
             "id": "send-email-build-task",
