@@ -9,7 +9,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 2
+    "Patch": 3
   },
     "demands":  [],
   "minimumAgentVersion": "1.83.0",
@@ -164,10 +164,8 @@
   ],
   "instanceNameFormat": "Send an email with subject $(Subject)",
   "execution": {
-    "PowerShell": {
-      "target": "$(currentDirectory)\\SendMail.ps1",
-      "argumentFormat": "",
-      "workingDirectory": "$(currentDirectory)"
+    "PowerShell3": {
+      "target": "SendMail.ps1"
     }
   }
 }
