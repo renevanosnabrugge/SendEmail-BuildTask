@@ -39,9 +39,9 @@ function SendMailFromPipeline
 
 
 
-    [string[]]$toMailAddresses=$To.Split(';');
-    [string[]]$ccMailAddresses=$CC.Split(';');
-    [string[]]$bccMailAddresses=$BCC.Split(';');
+    [string[]]$toMailAddresses=$To.TrimEnd(';').Split(';');
+    [string[]]$ccMailAddresses=$CC.TrimEnd(';').Split(';');
+    [string[]]$bccMailAddresses=$BCC.TrimEnd(';').Split(';');
 
     [bool]$BodyAsHtmlBool = [System.Convert]::ToBoolean($BodyAsHtml)
     [bool]$UseSSLBool =  [System.Convert]::ToBoolean($UseSSL)
