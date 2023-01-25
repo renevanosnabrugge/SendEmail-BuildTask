@@ -4,7 +4,7 @@
   "name": "SendEmail",
   "friendlyName": "#{PrivatePublicExtension}#Send email",
   "description": "Send an email to 1 or more addresses via the SMTP server you provide",
-  "helpMarkDown": "Version: #{PrivatePublicExtension}##{Build.BuildNumber}#. [More information](http://github.com/rvanosnabrugge)",
+  "helpMarkDown": "Version: #{PrivatePublicExtension}##{Build.BuildNumber}#. [More information](http://github.com/renevanosnabrugge)",
   "category": "Utility",
   "author": "Rene van Osnabrugge",
   "version": {
