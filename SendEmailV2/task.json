@@ -115,7 +115,7 @@
         "name": "SmtpServer",
         "type": "string",
         "label": "SMTP Server",
-        "defaultValue": "",
+        "defaultValue": "localhost",
         "required": false,
         "groupName": "smtpsettings",
         "helpMarkDown": "Name or IP Address of a SMTP server"
