@@ -33,7 +33,7 @@
         "defaultValue": "",
         "required": true,
         "groupName": "mailsettings",
-        "helpMarkDown": "To Addresses. Separate by semicolon (;)"
+        "helpMarkDown": "To Addresses. Separated by comma (,)"
       },
       {
         "name": "CC",
@@ -42,7 +42,7 @@
         "defaultValue": "",
         "required": false,
         "groupName": "mailsettings",
-        "helpMarkDown": "CC Addresses. Separate by semicolon (;)"
+        "helpMarkDown": "CC Addresses. Separated by comma (,)"
       },
       {
         "name": "BCC",
@@ -51,7 +51,7 @@
         "defaultValue": "",
         "required": false,
         "groupName": "mailsettings",
-        "helpMarkDown": "BCC Addresses. Separate by semicolon (;)"
+        "helpMarkDown": "BCC Addresses. Separated by comma (,)"
       },
       {
         "name": "From",
