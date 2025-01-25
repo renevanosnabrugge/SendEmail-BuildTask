@@ -27,7 +27,7 @@ nodemailer.createTestAccount((err, account ) => {
     tmr.setInput('Body', '<b>Hello World!</b>');
     tmr.setInput('BodyAsHTML', 'true');
     tmr.setInput('AddAttachment', 'true');
-    tmr.setInput('Attachment', 'tests/success.js.log');
+    tmr.setInput('Attachment', './tests/success.js.log');
 
     console.log('Ready to run success test');
 
