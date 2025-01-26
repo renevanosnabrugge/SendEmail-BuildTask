@@ -106,7 +106,9 @@ async function run() {
             }
 
             console.log('Email sent: %s', info.messageId);
-            console.log('Preview URL: %s', nm.getTestMessageUrl(info));
+            if (SmtpServer.indexOf('smtp.ethereal.email') > -1) {
+                console.log('Preview URL: %s', nm.getTestMessageUrl(info));
+            }
             tl.setResult(tl.TaskResult.Succeeded, 'Email sent successfully');
         });
 
