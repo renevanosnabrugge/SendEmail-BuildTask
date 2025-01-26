@@ -1,6 +1,10 @@
 import tl = require('azure-pipelines-task-lib');
 import nm = require('nodemailer');
 
+function isNullOrEmpty(str: string | null | undefined): boolean {
+    return str === null || str === undefined || str.trim() === '';
+}
+
 async function run() {
     try 
     {
@@ -55,7 +59,7 @@ async function run() {
         
         let transporter: nm.Transporter;
         
-        if (SmtpUsername && SmtpPassword) { 
+        if (!isNullOrEmpty(SmtpUsername) && !isNullOrEmpty(SmtpPassword)) { 
             transporter = nm.createTransport({
                 host: SmtpServer,
                 port: smtpPortInt,
