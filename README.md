@@ -5,9 +5,10 @@ This extension takes care of sending email within your build or release pipeline
 * Send email to 1 or more addresses (To, CC and BCC)
 * Configure a SMTP server 
 
-*25-01-2025*
+*10-02-2025*
 Version 2 of the task has been created using Node. Added tests as well to support success/failure validation.
 Many thanks to Wes MacDonald (@wesmacdonald) for completely rewriting the task to modern standards. You are awesome
+
 *23-12-2020*
 Updated the deprecated SDK and changed some inner workings. Many thanks to [FlorisdeVreese](https://github.com/FlorisDevreese) for this pull request
 
