@@ -1,5 +1,5 @@
 # Send Email
-This extension takes care of sending email within your build or release pipeline
+This extension takes care of sending email within your build or release pipeline. Since February 2025 there is a new version that uses Node. This is fully created by Wes MacDonald (@wesmacdonald) and he deserves all credits!
 
 ## What can you do
 * Send email to 1 or more addresses (To, CC and BCC)
@@ -28,4 +28,4 @@ Source can be found here on [Github](https://github.com/renevanosnabrugge/SendEm
 
 Follow my blog for updates [Road to ALM](http://www.roadtoalm.com)
 
-Or follow my company [Xpirit](http://xpirit.com)
+Or follow my company [Xebia](http://xebia.com)
