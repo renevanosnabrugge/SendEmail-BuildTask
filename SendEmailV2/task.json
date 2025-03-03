@@ -161,10 +161,12 @@
     "instanceNameFormat": "Send an email with subject $(Subject)",
     "execution": {
       "Node16": {
-        "target": "index.js"
+        "target": "index.js",
+        "platform": "linux, macos, windows"
       },
       "Node20_1": {
-        "target": "index.js"
+        "target": "index.js",
+        "platform": "linux, macos, windows"
       }
     }
   }
