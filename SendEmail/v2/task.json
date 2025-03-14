@@ -12,6 +12,13 @@
       "Minor": 0,
       "Patch": 0
     },
+    "visibility": [
+      "Build",
+      "Release"
+    ],
+    "demands": [
+      "npm"
+    ],
     "minimumAgentVersion": "2.209.0",
     "groups": [
         {
@@ -161,11 +168,11 @@
     "instanceNameFormat": "Send an email with subject $(Subject)",
     "execution": {
       "Node16": {
-        "target": "index.js",
+        "target": "SendEmail/v2/index.js",
         "platform": "linux, macos, windows"
       },
       "Node20_1": {
-        "target": "index.js",
+        "target": "SendEmail/v2/index.js",
         "platform": "linux, macos, windows"
       }
     }
